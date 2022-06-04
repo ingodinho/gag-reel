@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap');
+
+@font-face {
+    font-family: 'blade-runner';
+    src: url('../fonts/blade_runner_movie_font/BLADRMF_.TTF');
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --ff-prm: 'Open Sans', sans-serif;
+    --ff-sec: 'blade-runner', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--ff-prm);
+    text-align: center;
+}
+
+.font__chuck {
+    font-family: var(--ff-sec);
+    font-size: 4rem;
+}
+
+header article {
+    padding: 5rem 0;
+}
+
+header article h1 {
+    font-size: 2.5rem;
+}
+
+header article p {
+    font-size: 2rem;
+}
+
+/* =========================================================== */
+
+form {
+    margin: 0 auto;
+    width: 30%;
+}
+
+form input, form select {
+    display: block;
+    font-size: 1.8rem;
+    padding: 0.5rem;
+    width: 100%;
+    margin: 1rem 0;
+    font-family: var(--ff-prm);
+
+}
+
+.button {
+    font-family: var(--ff-sec);
+    border: 1px solid inherit;
+    background: transparent;
+    border-radius: 999px;
+    transition: all 0.3s;
+}
+
+.button:hover {
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* =========================================================== */
+
+.joke {
+    margin: 5rem auto 0 auto;
+    font-size: 2.2rem;
+    width: 80%;
+}
