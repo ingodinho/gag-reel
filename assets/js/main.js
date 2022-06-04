@@ -11,18 +11,18 @@ const category = document.body.querySelector('#input__category');
 const formSub = document.body.querySelector('.input__form');
 const outJoke = document.body.querySelector('.joke');
 
-const inputObj = () => {
-    const obj = {
-        firstName: firstName.value,
-        lastName: lastName.value,
-        category: category.value
-    }
-    console.log(obj);
-    return obj;
-}
+// const inputObj = () => {
+//     const obj = {
+//         firstName: firstName.value,
+//         lastName: lastName.value,
+//         category: category.value
+//     }
+//     console.log(obj);
+//     return obj;
+// }
 
-const createLink = (inpObj) => {
-    return `http://api.icndb.com/jokes/random?firstName=${inpObj.firstName}&lastName=${inpObj.lastName}${inpObj.category != 'random' ? `&limitTo=[${inpObj.category}]` : ''}`;
+const createLink = () => {
+    return `https://api.chucknorris.io/jokes/random${category.value != 'random' ? `?category=${category.value}` : ''}`;
 }
 
 const getJoke = async (link) => {
@@ -32,14 +32,15 @@ const getJoke = async (link) => {
 }
 
 const outputSite = (joke) => {
-    outJoke.innerHTML = `<span>${joke}</span>`
+    const replacedJoke = joke.replaceAll('Chuck',firstName.value).replaceAll('Norris',lastName.value);
+    outJoke.innerHTML = `<span>${replacedJoke}</span>`
 }
 
 const createJoke = async () => {
-    const obj = inputObj();
-    const link = createLink(obj);
+    // const obj = inputObj();
+    const link = createLink();
     const jsonObj = await getJoke(link);
-    outputSite(jsonObj.value.joke)
+    outputSite(jsonObj.value)
 }
 
 // Event Listener
