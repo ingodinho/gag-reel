@@ -62,7 +62,6 @@ form input, form select {
 .button {
     font-family: var(--ff-sec);
     border: 1px solid inherit;
-    background: transparent;
     border-radius: 999px;
     transition: all 0.3s;
 }
